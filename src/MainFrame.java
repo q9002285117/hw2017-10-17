@@ -7,7 +7,7 @@ import java.awt.event.WindowEvent;
 import java.util.Random;
 
 public class MainFrame extends JFrame {
-    private LoginFrame logframe = new LoginFrame();
+    private LoginFrame loginframe = new LoginFrame();
     private JPanel jpl = new JPanel(new GridLayout(4, 3, 3, 3));
     private JTextField jtf = new JTextField();
     private JButton jbtn[] = new JButton[12];
@@ -16,18 +16,18 @@ public class MainFrame extends JFrame {
     private Container cp;
 
     public MainFrame(LoginFrame log) {
-        logframe = log;
+        loginframe = log;
         init();
     }
 
     private void init() {
         Random rnd = new Random();
-        this.setBounds(Swidth / 2 - width / 2, Sheight / 2 - height / 2, 300, 300);
+        this.setBounds(Swidth / 2 - width / 2, Sheight / 2 - height / 2, width, height);
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 MainFrame.this.setVisible(false);
-                logframe.setVisible(true);
+                loginframe.setVisible(true);
             }
         });
         cp = this.getContentPane();
